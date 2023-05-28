@@ -9,6 +9,13 @@ $font-josefinSans:'Josefin Sans', sans-serif;
 $font-nonito:'Nunito Sans', sans-serif;
 
 
+@mixin centring($topValue){
+  position: absolute;
+  top: $topValue;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 
 @mixin flexLayout{
@@ -17,10 +24,15 @@ $font-nonito:'Nunito Sans', sans-serif;
   justify-content: center;
 }
 
-@mixin textStyles{
+@mixin textStyles($transform: uppercase){
   font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: $transform;
+}
+
+%fullSpace{
+  width: 100%;
+  height: 100%;
 }
 
 *{
@@ -31,3 +43,8 @@ $font-nonito:'Nunito Sans', sans-serif;
 body{
   background-color:$color-dark;
 }
+
+
+// img {
+//   width: 100%;
+// }
